@@ -1,8 +1,12 @@
 import pandas as pd
 import joblib
+import os
 
-# load the saved model
-model = joblib.load('/model/trained_model.pkl')
+# load the model
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, 'model', 'trained_model.pkl')
+model = joblib.load(model_path)
+
 
 print(f"Model loaded successfully!")
 print(f"Type 'exit' to exit prediction testing!\n")
